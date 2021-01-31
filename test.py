@@ -2,7 +2,7 @@ import unittest
 from os import path
 from os import listdir
 from os.path import isfile, join
-from config import xmlurl, downloaddir, xmlfilename, csvheader, s3, s3_bucket_name
+from config import xmlurl, downloaddir, xmlfilename, s3, s3_bucket_name
 from main import uploadfiletos3, downloadFile, extractZipFile
 
 
@@ -19,15 +19,14 @@ class TestMain(unittest.TestCase):
                 else:
                     self.assertTrue(False)
 
-
     def test_downloadFile(self):
         downloadFile(xmlurl, xmlfilename)
         self.assertTrue(path.exists(downloaddir + xmlfilename))
 
-
     def test_extractZipFile(self):
         extractZipFile("E:/temp/Temp.zip")
         self.assertTrue(path.exists(downloaddir + "Temp.txt"))
+
 
 if __name__ == '__main__':
     unittest.main()
