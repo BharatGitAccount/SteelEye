@@ -14,8 +14,8 @@ downloaddir = "E://temp//"
 s3 = boto3.resource(
     service_name='s3',
     region_name='ap-south-1',
-    aws_access_key_id='AKIA2F4YQJGR5PLWHU6P',
-    aws_secret_access_key='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'
+    aws_access_key_id='',
+    aws_secret_access_key=''
 )
 
 # S3 bucket to be used for uploading csv files
